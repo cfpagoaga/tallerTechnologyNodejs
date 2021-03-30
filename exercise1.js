@@ -1,10 +1,11 @@
 "use strict";
 
 //Declaration of modificated array;
-let variableArray = [0,2,3,4,0,0,9,8,0,9];
+let variableArray;
 let imaginaryString = "";
-let movingZeroDigitRight = () => {
+let movingZeroDigitRight = (arrayNumber) => {
     return new Promise((resolve,reject)=>{
+        variableArray = arrayNumber;
         if(variableArray.length>=0 && variableArray.length<=100){
             let countReal=0;
             for (let index = 0; countReal < variableArray.length; index++) {
@@ -16,13 +17,13 @@ let movingZeroDigitRight = () => {
                     }
                     countReal++;
                 }else{
-                    reject({message: "El digito es mayor de 9"});
+                    reject({message: "The Digit is bigger than 9"});
                 }
             }
             resolve(true);
         }else{
             console.log("Error");
-            reject({message: "El arreglo contiene mas de 100 elementos"});
+            reject({message: "The array has more than 100 elementos"});
         }
     });
 }
@@ -44,7 +45,7 @@ let creatingImaginaryNumber = () => {
     });
 }
   
-movingZeroDigitRight()
+movingZeroDigitRight([4,8,0,9,2,5,0,3,3,0])
     .then(creatingImaginaryNumber)
     .then(result=>{
         console.log("Success Finish");
