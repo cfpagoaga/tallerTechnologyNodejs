@@ -35,8 +35,8 @@ let creatingImaginaryNumber = () => {
         imaginaryString = imaginaryString.split(",0");
         imaginaryString = imaginaryString[0];
         imaginaryString = imaginaryString.replace(/,/g, '');
-        imaginaryString = imaginaryString;
         console.log("Imaginary String ===> ",imaginaryString);
+        imaginaryString = BigInt(imaginaryString);
         imaginaryString++;
         imaginaryString = imaginaryString.toString().split('');
         imaginaryString = imaginaryString.map(x => parseInt(x));
